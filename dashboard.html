@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Studio Portal | Bloom & Form</title>
+  <meta name="description" content="Manage your Bloom & Form workshop bookings, seasonal sessions, loyalty rewards, payments, and guest profile.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <!-- DASHBOARD SIDEBAR (DESKTOP & MOBILE OFF-CANVAS) -->
+  <aside class="dashboard-sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="brand-logo" style="color: var(--petal-cream);">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 8V24M10 16H22M12 12C14 14 18 14 20 12M12 20C14 18 18 18 20 20" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">BLOOM & FORM</span>
+          <span class="brand-descriptor">GUEST PORTAL</span>
+        </div>
+      </a>
+    </div>
+
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#overview" class="sidebar-menu-link js-dash-tab active" data-tab="overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Overview</span>
+        </a>
+      </li>
+      <li>
+        <a href="#bookings" class="sidebar-menu-link js-dash-tab" data-tab="bookings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span>My Bookings</span>
+        </a>
+      </li>
+      <li>
+        <a href="#book-wizard" class="sidebar-menu-link js-dash-tab" data-tab="book-wizard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <span>+ Book Workshop</span>
+        </a>
+      </li>
+      <li>
+        <a href="#seasonal" class="sidebar-menu-link js-dash-tab" data-tab="seasonal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/></svg>
+          <span>Seasonal Themes</span>
+        </a>
+      </li>
+      <li>
+        <a href="#rewards" class="sidebar-menu-link js-dash-tab" data-tab="rewards">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Loyalty Rewards</span>
+        </a>
+      </li>
+      <li>
+        <a href="#payments" class="sidebar-menu-link js-dash-tab" data-tab="payments">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          <span>Payments</span>
+        </a>
+      </li>
+      <li>
+        <a href="#profile" class="sidebar-menu-link js-dash-tab" data-tab="profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span>Guest Profile</span>
+        </a>
+      </li>
+      <li>
+        <a href="#support" class="sidebar-menu-link js-dash-tab" data-tab="support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <span>Help & Support</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="index.html" class="sidebar-menu-link" style="color: var(--text-inverse-muted);">
+        <span>← Public Site</span>
+      </a>
+      <a href="#" class="sidebar-menu-link js-logout-btn" style="color: #E55353;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Sign Out</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- DASHBOARD MAIN CONTAINER -->
+  <main class="dashboard-main">
+
+    <!-- TOPBAR -->
+    <header class="dashboard-topbar">
+      <div class="topbar-left" style="display: flex; align-items: center; gap: 16px;">
+        <button id="dash-hamburger" class="mobile-hamburger" aria-label="Toggle Navigation" style="color: var(--text-main); display: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 26px; height: 26px;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <h2 id="dash-topbar-title" class="topbar-title">Overview</h2>
+      </div>
+
+      <div class="topbar-actions">
+        <!-- NOTIFICATIONS DROPDOWN -->
+        <div class="notif-wrapper">
+          <button id="notif-toggle-btn" class="notif-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 20px; height: 20px;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span class="notif-badge-count">2</span>
+          </button>
+          <div id="notif-dropdown" class="notif-dropdown">
+            <div class="notif-header">
+              <span>Notifications</span>
+              <button id="mark-all-read" style="background: none; border: none; color: var(--terracotta-bloom); font-size: 0.75rem; cursor: pointer;">Mark Read</button>
+            </div>
+            <ul class="notif-list">
+              <li class="notif-item unread">
+                <strong>WORKSHOP REMINDER</strong>
+                <span>Your Seasonal Botanical Bouquet session is this Saturday at 2:00 PM.</span>
+              </li>
+              <li class="notif-item unread">
+                <strong>LOYALTY MILESTONE</strong>
+                <span>You are only 80 points away from your complimentary floral upgrade!</span>
+              </li>
+              <li class="notif-item">
+                <strong>AUTUMN COLLECTION</strong>
+                <span>Autumn textural centerpiece sessions are now open for booking.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" style="color: var(--text-main); border-color: var(--border-color);">
+          <span>◐</span>
+        </button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction" style="color: var(--text-main); border-color: var(--border-color);">
+          <span>⇄</span>
+        </button>
+
+        <!-- GUEST AVATAR BADGE -->
+        <div class="guest-profile-badge">
+          <img src="assets/images/4.png" alt="Emma Carter avatar" class="guest-avatar-img">
+          <div class="guest-info">
+            <span class="guest-name">Emma Carter</span>
+            <span class="guest-id">BF-2048</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA WITH TABBED VIEWS -->
+    <div class="dashboard-content-container">
+
+      <!-- ==========================================
+           TAB 01: OVERVIEW
+           ========================================== -->
+      <section id="tab-overview" class="tab-view active">
+        <div style="margin-bottom: 16px;">
+          <span class="section-tag" style="margin-bottom: 4px;">GUEST STUDIO PORTAL</span>
+          <h1 style="font-size: 1.85rem; margin-bottom: 4px;">WELCOME BACK, EMMA</h1>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Here's what's happening with your Bloom & Form floral workshops and studio rewards.</p>
+        </div>
+
+        <!-- KPI SUMMARY CARDS -->
+        <div class="kpi-grid">
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">NEXT WORKSHOP</span>
+            <div class="kpi-value" style="font-size: 1.8rem;">SEP 27</div>
+            <span class="kpi-subtext">2:00 PM • Studio Table 3</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">UPCOMING BOOKINGS</span>
+            <div class="kpi-value">2</div>
+            <span class="kpi-subtext">Confirmed sessions</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">LOYALTY POINTS</span>
+            <div class="kpi-value">420</div>
+            <span class="kpi-subtext">80 points to next perk</span>
+          </div>
+
+          <div class="kpi-card hover-petal-card">
+            <span class="kpi-label">TOTAL WORKSHOPS</span>
+            <div class="kpi-value">6</div>
+            <span class="kpi-subtext">Attended since 2025</span>
+          </div>
+        </div>
+
+        <!-- FEATURED NEXT WORKSHOP PANEL -->
+        <div class="featured-workshop-panel hover-petal-card">
+          <div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+              <span class="section-tag" style="margin-bottom: 0;">FEATURED UPCOMING</span>
+              <span class="workshop-badge-status">● CONFIRMED</span>
+            </div>
+            <h2>Seasonal Botanical Bouquet</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-block: 10px; font-size: 0.9rem;">
+              <span><strong>Date:</strong> September 27, 2026</span>
+              <span><strong>Time:</strong> 2:00 PM – 4:00 PM</span>
+              <span><strong>Duration:</strong> 2 Hours</span>
+              <span><strong>Location:</strong> Studio Table 3</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 14px;">
+              All garden blooms, shears, and ceramic vase are reserved for your arrival.
+            </p>
+            <div style="display: flex; gap: 12px;">
+              <a href="#" class="btn btn-primary" data-switch-tab="bookings">VIEW BOOKING DETAILS</a>
+              <a href="#" class="btn btn-secondary" data-switch-tab="bookings">CHANGE SESSION</a>
+            </div>
+          </div>
+          <div class="image-leaf-container" style="height: 190px;">
+            <img src="assets/images/5.png" alt="Seasonal bouquet session preview">
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 02: MY BOOKINGS
+           ========================================== -->
+      <section id="tab-bookings" class="tab-view">
+        <div class="tab-header-row" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;">
+          <div>
+            <h2>MY BOOKINGS</h2>
+            <p>View upcoming sessions, past completed workshops, or adjust dates.</p>
+          </div>
+          <a href="#" class="btn btn-primary" data-switch-tab="book-wizard">+ BOOK NEW WORKSHOP</a>
+        </div>
+
+        <!-- BOOKING CARDS LIST -->
+        <div class="booking-cards-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+          <!-- Booking 1 -->
+          <div class="booking-card hover-petal-card" style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="display: flex; gap: var(--space-md); align-items: center;">
+              <div class="image-leaf-container" style="width: 100px; height: 80px; flex-shrink: 0;">
+                <img src="assets/images/6.png" alt="Bouquet workshop">
+              </div>
+              <div>
+                <span class="workshop-badge-status">● CONFIRMED</span>
+                <h4 style="margin-block: 4px;">Seasonal Botanical Bouquet</h4>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">September 27, 2026 • 2:00 PM • 1 Guest • Booking Ref: BF-2026-0917</div>
+              </div>
+            </div>
+            <div class="booking-card-actions" style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Session details sent to email.');">View Receipt</button>
+              <button class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Date change request opened. Please select a new date below.');">Change Date</button>
+            </div>
+          </div>
+
+          <!-- Booking 2 -->
+          <div class="booking-card hover-petal-card" style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-md);">
+            <div style="display: flex; gap: var(--space-md); align-items: center;">
+              <div class="image-leaf-container" style="width: 100px; height: 80px; flex-shrink: 0;">
+                <img src="assets/images/7.png" alt="Table arrangement workshop">
+              </div>
+              <div>
+                <span class="workshop-badge-status">● CONFIRMED</span>
+                <h4 style="margin-block: 4px;">Autumn Table Arrangement</h4>
+                <div style="font-size: 0.85rem; color: var(--text-muted);">October 11, 2026 • 11:00 AM • 2 Guests • Booking Ref: BF-2026-1002</div>
+              </div>
+            </div>
+            <div class="booking-card-actions" style="display: flex; gap: 8px;">
+              <button class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Session details sent to email.');">View Receipt</button>
+              <button class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8rem;" onclick="showDashToast('Date change request opened.');">Change Date</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 03: INTERACTIVE 5-STEP BOOKING WIZARD
+           ========================================== -->
+      <section id="tab-book-wizard" class="tab-view">
+        <div style="margin-bottom: var(--space-lg);">
+          <span class="section-tag">PAGE-BASED BOOKING ENGINE</span>
+          <h2>BOOK A WORKSHOP SESSION</h2>
+          <p>Complete your booking in 5 simple steps. No popups or modals.</p>
+        </div>
+
+        <div id="booking-wizard-container" class="booking-wizard-card hover-petal-card">
+          <!-- WIZARD PROGRESS BAR & STEP NAV -->
+          <div class="wizard-nav-wrapper" style="position: relative; margin-bottom: var(--space-2xl);">
+            <div class="wizard-progress-track">
+              <div class="wizard-progress-fill" id="wizard-progress-fill" style="width: 0%;"></div>
+            </div>
+            
+            <div class="wizard-steps-nav">
+              <div class="wizard-step-pill active" data-step="1">
+                <span class="wizard-step-num">1</span>
+                <span>Select Class</span>
+              </div>
+              <div class="wizard-step-pill" data-step="2">
+                <span class="wizard-step-num">2</span>
+                <span>Select Date</span>
+              </div>
+              <div class="wizard-step-pill" data-step="3">
+                <span class="wizard-step-num">3</span>
+                <span>Select Time</span>
+              </div>
+              <div class="wizard-step-pill" data-step="4">
+                <span class="wizard-step-num">4</span>
+                <span>Guests</span>
+              </div>
+              <div class="wizard-step-pill" data-step="5">
+                <span class="wizard-step-num">5</span>
+                <span>Confirmation</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 1: SELECT WORKSHOP -->
+          <div class="wizard-step-card" style="display: block;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h4 style="margin: 0; font-size: 1.15rem;">STEP 01: CHOOSE A WORKSHOP CLASS</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Select from our seasonal botanical bouquet and centerpiece sessions.</p>
+              </div>
+              <span class="workshop-badge-status" style="font-size: 0.78rem;">✿ ALL MATERIALS INCLUDED</span>
+            </div>
+
+            <!-- WORKSHOP SELECTION CARDS GRID -->
+            <div class="wizard-grid-2" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px;">
+              <!-- Choice 1 -->
+              <div class="js-select-workshop wizard-choice-card selected hover-petal-card" data-title="Seasonal Botanical Bouquet" data-price="$120">
+                <div class="wizard-choice-img">
+                  <img src="assets/images/8.png" alt="Seasonal Botanical Bouquet">
+                  <span class="wizard-badge-check">✓ SELECTED</span>
+                </div>
+                <div class="wizard-choice-body">
+                  <h4>Seasonal Botanical Bouquet</h4>
+                  <p>2 Hours • Garden roses, sweet peas & eucalyptus included</p>
+                  <div class="wizard-choice-price">$120 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">/ guest</span></div>
+                </div>
+              </div>
+
+              <!-- Choice 2 -->
+              <div class="js-select-workshop wizard-choice-card hover-petal-card" data-title="Autumn Table Arrangement" data-price="$145">
+                <div class="wizard-choice-img">
+                  <img src="assets/images/9.png" alt="Autumn Table Arrangement">
+                  <span class="wizard-badge-check">SELECT CLASS</span>
+                </div>
+                <div class="wizard-choice-body">
+                  <h4>Autumn Table Arrangement</h4>
+                  <p>2.5 Hours • Ceramic vessel & organic shears included</p>
+                  <div class="wizard-choice-price">$145 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">/ guest</span></div>
+                </div>
+              </div>
+
+              <!-- Choice 3 (Odd Leftover Card Centered on Tablet/Desktop) -->
+              <div class="js-select-workshop wizard-choice-card hover-petal-card" data-title="Japanese Pin Frog (Ikebana)" data-price="$135">
+                <div class="wizard-choice-img">
+                  <img src="assets/images/10.png" alt="Japanese Pin Frog Ikebana">
+                  <span class="wizard-badge-check">SELECT CLASS</span>
+                </div>
+                <div class="wizard-choice-body">
+                  <h4>Japanese Pin Frog (Ikebana)</h4>
+                  <p>2 Hours • Brass Kenzan pin frog & shallow bowl</p>
+                  <div class="wizard-choice-price">$135 <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: normal;">/ guest</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end;">
+              <button class="btn btn-primary js-next-step" style="padding: 12px 28px;">
+                NEXT: CHOOSE DATE →
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: SELECT DATE -->
+          <div class="wizard-step-card" style="display: none;">
+            <div style="margin-bottom: 20px;">
+              <h4 style="margin: 0; font-size: 1.15rem;">STEP 02: SELECT WORKSHOP DATE</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Choose an available weekend session date at our studio.</p>
+            </div>
+
+            <div class="wizard-date-grid" style="display: flex; gap: 14px; margin-bottom: var(--space-xl); flex-wrap: wrap;">
+              <button class="btn btn-secondary js-select-date active wizard-date-pill" data-date="Sat, Sep 27, 2026">
+                <span class="date-pill-day">SATURDAY</span>
+                <span class="date-pill-main">Sep 27, 2026</span>
+                <span class="date-pill-seats">4 Seats Left</span>
+              </button>
+              <button class="btn btn-secondary js-select-date wizard-date-pill" data-date="Sat, Oct 04, 2026">
+                <span class="date-pill-day">SATURDAY</span>
+                <span class="date-pill-main">Oct 04, 2026</span>
+                <span class="date-pill-seats">6 Seats Left</span>
+              </button>
+              <button class="btn btn-secondary js-select-date wizard-date-pill" data-date="Sun, Oct 11, 2026">
+                <span class="date-pill-day">SUNDAY</span>
+                <span class="date-pill-main">Oct 11, 2026</span>
+                <span class="date-pill-seats">2 Seats Left</span>
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: space-between;">
+              <button class="btn btn-secondary js-prev-step">← BACK</button>
+              <button class="btn btn-primary js-next-step">NEXT: CHOOSE TIME →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: SELECT TIME -->
+          <div class="wizard-step-card" style="display: none;">
+            <div style="margin-bottom: 20px;">
+              <h4 style="margin: 0; font-size: 1.15rem;">STEP 03: SELECT SESSION TIME SLOT</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Pick a morning, afternoon, or twilight workshop time.</p>
+            </div>
+
+            <div class="wizard-time-grid" style="display: flex; gap: 14px; margin-bottom: var(--space-xl); flex-wrap: wrap;">
+              <button class="btn btn-secondary js-select-time wizard-time-pill" data-time="10:00 AM">
+                <span class="time-pill-icon">☀️</span>
+                <span class="time-pill-label">Morning Studio</span>
+                <span class="time-pill-val">10:00 AM – 12:00 PM</span>
+              </button>
+              <button class="btn btn-secondary js-select-time active wizard-time-pill" data-time="2:00 PM">
+                <span class="time-pill-icon">🌤️</span>
+                <span class="time-pill-label">Afternoon Masterclass</span>
+                <span class="time-pill-val">2:00 PM – 4:00 PM</span>
+              </button>
+              <button class="btn btn-secondary js-select-time wizard-time-pill" data-time="5:30 PM">
+                <span class="time-pill-icon">🌙</span>
+                <span class="time-pill-label">Twilight Session</span>
+                <span class="time-pill-val">5:30 PM – 7:30 PM</span>
+              </button>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: space-between;">
+              <button class="btn btn-secondary js-prev-step">← BACK</button>
+              <button class="btn btn-primary js-next-step">NEXT: GUESTS & SUMMARY →</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: GUESTS & SUMMARY -->
+          <div class="wizard-step-card" style="display: none;">
+            <div style="margin-bottom: 20px;">
+              <h4 style="margin: 0; font-size: 1.15rem;">STEP 04: NUMBER OF GUESTS & SUMMARY</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 2px;">Adjust reserved worktables and review session details.</p>
+            </div>
+
+            <div style="margin-bottom: var(--space-lg); background: var(--bg-surface); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <label style="display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 8px;">Select Reserved Seats / Guests</label>
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <select id="wizard-guest-count" class="form-control" style="max-width: 220px;">
+                  <option value="1 Guest">1 Guest ($120.00)</option>
+                  <option value="2 Guests">2 Guests ($240.00)</option>
+                  <option value="3 Guests">3 Guests ($360.00)</option>
+                  <option value="4+ Group">4+ Group Session ($480.00+)</option>
+                </select>
+                <span style="font-size: 0.82rem; color: var(--terracotta-bloom); font-weight: 600;">✓ Worktables assigned together</span>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-surface-elevated); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: var(--space-xl);" class="hover-petal-card">
+              <h5 style="margin-bottom: 12px; color: var(--terracotta-bloom); font-size: 0.95rem; letter-spacing: 0.05em; display: flex; justify-content: space-between; align-items: center;">
+                <span>BOOKING SUMMARY</span>
+                <span class="workshop-badge-status" style="font-size: 0.75rem;">LIVE CALCULATION</span>
+              </h5>
+              
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; font-size: 0.92rem;">
+                <div><span style="color: var(--text-muted);">Class:</span> <strong id="sum-workshop">Seasonal Botanical Bouquet</strong></div>
+                <div><span style="color: var(--text-muted);">Date:</span> <strong id="sum-date">Sep 27, 2026</strong></div>
+                <div><span style="color: var(--text-muted);">Time Slot:</span> <strong id="sum-time">2:00 PM</strong></div>
+                <div><span style="color: var(--text-muted);">Reserved Seats:</span> <strong id="sum-guests">1 Guest</strong></div>
+                <div style="grid-column: 1 / -1; padding-top: 10px; border-top: 1px dashed var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                  <span style="font-size: 1rem; font-weight: 600;">Total Workshop Fee:</span>
+                  <span id="sum-price" style="font-family: var(--font-serif); font-size: 1.6rem; font-weight: bold; color: var(--terracotta-bloom);">$120</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: space-between;">
+              <button class="btn btn-secondary js-prev-step">← BACK</button>
+              <button class="btn btn-primary js-confirm-booking" style="padding: 12px 28px;">
+                CONFIRM & BOOK SESSION →
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 5: CELEBRATION CONFIRMATION CARD -->
+          <div class="wizard-step-card" style="display: none; text-align: center;">
+            <div class="flower-bloom-icon" style="font-size: 3.5rem; color: var(--terracotta-bloom); margin-bottom: 12px;">✿</div>
+            <h2 style="color: var(--terracotta-bloom); font-size: 2.2rem; margin-bottom: 6px;">YOUR WORKSHOP IS BOOKED!</h2>
+            <p style="margin-bottom: var(--space-xl); color: var(--text-muted); font-size: 1rem;">A instant digital confirmation & calendar invite have been sent to <strong>guest@example.com</strong>.</p>
+
+            <div style="background: var(--bg-surface); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color); max-width: 520px; margin-inline: auto; text-align: start; margin-bottom: var(--space-xl); box-shadow: var(--shadow-md);" class="hover-petal-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.08em; font-weight: bold;">BOOKING REFERENCE</span>
+                <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="navigator.clipboard.writeText(document.getElementById('conf-ref').textContent); showDashToast('Booking Ref copied to clipboard!');">
+                  📋 Copy Code
+                </button>
+              </div>
+
+              <div id="conf-ref" style="font-family: var(--font-serif); font-size: 2rem; font-weight: bold; color: var(--terracotta-bloom); margin-block: 6px;">BF-2026-0917</div>
+              
+              <hr style="border: 0; border-top: 1px solid var(--border-color); margin-block: 16px;">
+              
+              <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem;">
+                <div><span style="color: var(--text-muted);">Workshop:</span> <strong id="conf-workshop">Seasonal Botanical Bouquet</strong></div>
+                <div><span style="color: var(--text-muted);">Date & Time:</span> <strong id="conf-date-time">Sat, Sep 27 at 2:00 PM</strong></div>
+                <div><span style="color: var(--text-muted);">Studio Location:</span> <strong>148 Botanical Way, Studio Table 3</strong></div>
+                <div><span style="color: var(--text-muted);">Included:</span> <strong>All garden blooms, carbon shears & vessel</strong></div>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+              <a href="#" class="btn btn-primary" data-switch-tab="bookings" style="padding: 12px 28px;">VIEW IN MY BOOKINGS →</a>
+              <a href="#" class="btn btn-secondary" onclick="window.print();" style="padding: 12px 24px;">🖨️ Print Receipt</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 04: SEASONAL WORKSHOPS
+           ========================================== -->
+      <section id="tab-seasonal" class="tab-view">
+        <div style="margin-bottom: 18px;">
+          <h2>SEASONAL WORKSHOP THEMES</h2>
+          <p>Explore upcoming seasonal flower themes tailored to each quarter's harvest.</p>
+        </div>
+
+        <div class="seasonal-themes-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-xl);">
+          <!-- Spring -->
+          <div class="hover-petal-card" style="background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <div class="image-leaf-container" style="height: 200px;">
+              <img src="assets/images/11.png" alt="Spring theme">
+            </div>
+            <div style="padding: var(--space-lg);">
+              <span class="section-tag">SPRING COLLECTION</span>
+              <h3>Garden-Inspired Bouquets</h3>
+              <p style="font-size: 0.9rem; margin-block: 8px;">Soft pastel garden roses, early ranunculus, sweet peas, and fresh eucalyptus branches.</p>
+              <a href="#" class="btn btn-secondary" data-switch-tab="book-wizard" style="padding: 8px 14px; font-size: 0.8rem;">VIEW SESSIONS →</a>
+            </div>
+          </div>
+
+          <!-- Summer -->
+          <div class="hover-petal-card" style="background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <div class="image-leaf-container" style="height: 200px;">
+              <img src="assets/images/12.png" alt="Summer theme">
+            </div>
+            <div style="padding: var(--space-lg);">
+              <span class="section-tag">SUMMER COLLECTION</span>
+              <h3>Botanical Compositions</h3>
+              <p style="font-size: 0.9rem; margin-block: 8px;">Vibrant dahlias, sunflowers, meadow grasses, and relaxed ceramic table centerpieces.</p>
+              <a href="#" class="btn btn-secondary" data-switch-tab="book-wizard" style="padding: 8px 14px; font-size: 0.8rem;">VIEW SESSIONS →</a>
+            </div>
+          </div>
+
+          <!-- Autumn -->
+          <div class="hover-petal-card" style="background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <div class="image-leaf-container" style="height: 200px;">
+              <img src="assets/images/13.png" alt="Autumn theme">
+            </div>
+            <div style="padding: var(--space-lg);">
+              <span class="section-tag">AUTUMN COLLECTION</span>
+              <h3>Textural Seasonal Centerpiece</h3>
+              <p style="font-size: 0.9rem; margin-block: 8px;">Earthy toasted amaranthus, dried seed pods, and warm sculptural botanical forms.</p>
+              <a href="#" class="btn btn-secondary" data-switch-tab="book-wizard" style="padding: 8px 14px; font-size: 0.8rem;">VIEW SESSIONS →</a>
+            </div>
+          </div>
+
+          <!-- Winter -->
+          <div class="hover-petal-card" style="background: var(--bg-surface); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color);">
+            <div class="image-leaf-container" style="height: 200px;">
+              <img src="assets/images/14.png" alt="Winter theme">
+            </div>
+            <div style="padding: var(--space-lg);">
+              <span class="section-tag">WINTER COLLECTION</span>
+              <h3>Evergreen Foliage & Berries</h3>
+              <p style="font-size: 0.9rem; margin-block: 8px;">Elegant winter foliage, hellebores, silver eucalyptus, and sculptural branches.</p>
+              <a href="#" class="btn btn-secondary" data-switch-tab="book-wizard" style="padding: 8px 14px; font-size: 0.8rem;">VIEW SESSIONS →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 05: LOYALTY REWARDS
+           ========================================== -->
+      <section id="tab-rewards" class="tab-view">
+        <div style="margin-bottom: 18px;">
+          <h2>YOUR BLOOM REWARDS</h2>
+          <p>Earn points with every workshop session you attend and unlock studio perks.</p>
+        </div>
+
+        <div class="loyalty-card hover-petal-card" style="margin-bottom: var(--space-xl);">
+          <div class="loyalty-card-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <span class="section-tag" style="color: var(--terracotta-bloom);">CURRENT STATUS</span>
+              <h3 style="font-size: 1.8rem; color: var(--petal-cream); margin-top: 4px;">420 BLOOM POINTS</h3>
+            </div>
+            <span style="color: var(--text-inverse-muted); font-size: 0.9rem; font-weight: 500;">Target: 500 Points</span>
+          </div>
+
+          <div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <div class="loyalty-card-footer" style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.85rem; color: var(--text-inverse-muted); flex-wrap: wrap; gap: 8px;">
+              <span>420 / 500 Points</span>
+              <span>Next Perk: Complimentary Ceramic Vase Upgrade</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- REWARDS HISTORY TABLE -->
+        <div style="background: var(--bg-surface); padding: var(--space-lg); border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="margin-bottom: 12px;">POINTS HISTORY</h4>
+          <div style="font-size: 0.8rem; color: var(--terracotta-bloom); margin-bottom: 12px;">* Demo loyalty rewards data.</div>
+          <div class="pricing-table-wrapper" style="margin-block: 8px;">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Activity</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Aug 14, 2026</td><td>Completed Summer Flower Studio Workshop</td><td style="color: #24A148; font-weight: bold;">+100 pts</td></tr>
+                <tr><td>Jul 02, 2026</td><td>Completed Seasonal Bouquet Masterclass</td><td style="color: #24A148; font-weight: bold;">+120 pts</td></tr>
+                <tr><td>May 19, 2026</td><td>Attended Private Group Event</td><td style="color: #24A148; font-weight: bold;">+120 pts</td></tr>
+                <tr><td>Mar 10, 2026</td><td>Loyalty Sign-up Bonus</td><td style="color: #24A148; font-weight: bold;">+80 pts</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 06: PAYMENTS
+           ========================================== -->
+      <section id="tab-payments" class="tab-view">
+        <div style="margin-bottom: 20px;">
+          <span class="section-tag" style="margin-bottom: 4px;">STUDIO BILLING & INVOICES</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 4px;">PAYMENT HISTORY & METHODS</h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Manage saved payment options, view billing activity, and download official session receipts.</p>
+        </div>
+
+        <!-- TOP ROW: VISUAL CREDIT CARD + BILLING STATS GRID -->
+        <div class="payments-top-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px;">
+          <!-- VISUAL CARD MOCKUP -->
+          <div class="payment-card-visual hover-petal-card" style="background: linear-gradient(135deg, #1A281F 0%, #2D4435 55%, #C96F55 100%) !important; color: #FFFFFF !important; box-shadow: 0 12px 32px rgba(26, 40, 31, 0.3) !important;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span style="font-size: 0.68rem; letter-spacing: 0.08em; color: #FFFFFF !important; font-weight: bold; background: rgba(255,255,255,0.2) !important; padding: 4px 10px; border-radius: 12px; text-transform: uppercase;">DEFAULT PAYMENT CARD</span>
+              <span style="font-size: 1.35rem; font-weight: 800; font-style: italic; color: #FFFFFF !important; letter-spacing: 0.05em;">VISA</span>
+            </div>
+
+            <!-- EMV CARD CHIP MOCKUP -->
+            <div style="width: 38px; height: 28px; background: linear-gradient(135deg, #E6C875 0%, #B89635 100%); border-radius: 6px; margin-block: 6px; border: 1px solid rgba(255,255,255,0.4); box-shadow: inset 0 1px 2px rgba(255,255,255,0.5);"></div>
+            
+            <div style="font-size: 1.4rem; letter-spacing: 0.16em; font-family: 'Courier New', monospace; color: #FFFFFF !important; margin-block: 10px; font-weight: 700; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+              •••• •••• •••• 4821
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; color: #FFFFFF !important; font-size: 0.8rem; margin-top: 10px;">
+              <div>
+                <div style="font-size: 0.62rem; text-transform: uppercase; color: rgba(255,255,255,0.75) !important; letter-spacing: 0.06em;">CARD HOLDER</div>
+                <div style="font-weight: 700; color: #FFFFFF !important; margin-top: 2px; letter-spacing: 0.04em;">EMMA CARTER</div>
+              </div>
+              <div>
+                <div style="font-size: 0.62rem; text-transform: uppercase; color: rgba(255,255,255,0.75) !important; letter-spacing: 0.06em;">EXPIRES</div>
+                <div style="font-weight: 700; color: #FFFFFF !important; margin-top: 2px; letter-spacing: 0.04em;">09/28</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAVED METHOD DETAILS & QUICK ACTIONS -->
+          <div class="hover-petal-card" style="background: var(--bg-surface); padding: 22px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h4 style="font-size: 1rem; margin: 0;">SAVED METHOD</h4>
+                <span class="workshop-badge-status" style="font-size: 0.75rem; padding: 2px 8px;">ACTIVE</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Primary card used for automatic workshop session reservations and add-ons.</p>
+              
+              <div style="display: flex; gap: 16px; margin-bottom: 16px; font-size: 0.85rem;">
+                <div><span style="color: var(--text-muted);">Lifetime Total:</span> <strong>$345.00</strong></div>
+                <div><span style="color: var(--text-muted);">Pass Status:</span> <strong style="color: var(--terracotta-bloom);">BLOOM MEMBER</strong></div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button class="btn btn-secondary" style="flex: 1; min-width: 140px; padding: 10px 14px; font-size: 0.8rem; text-align: center; justify-content: center;" onclick="showDashToast('Update payment method modal opened.');">
+                ⚙ Update Card
+              </button>
+              <button class="btn btn-primary" style="flex: 1; min-width: 140px; padding: 10px 14px; font-size: 0.8rem; text-align: center; justify-content: center;" onclick="showDashToast('Add new payment method feature selected.');">
+                + Add New Card
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTTOM ROW: FULL WIDTH PAST TRANSACTIONS TABLE -->
+        <div style="background: var(--bg-surface); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h4 style="margin: 0; font-size: 1.1rem;">PAST TRANSACTIONS & RECEIPTS</h4>
+              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">Official invoices and tax receipts for attended studio sessions.</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.78rem;" onclick="showDashToast('Exporting all transaction records as CSV...');">
+              📥 Export All (CSV)
+            </button>
+          </div>
+
+          <div class="pricing-table-wrapper" style="margin-block: 8px;">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Workshop Session</th>
+                  <th>Payment Method</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Tax Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sep 01, 2026</td>
+                  <td><strong>Seasonal Botanical Bouquet</strong></td>
+                  <td>Visa ending 4821</td>
+                  <td><strong>$120.00</strong></td>
+                  <td><span class="workshop-badge-status">PAID</span></td>
+                  <td>
+                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="showDashToast('Receipt PDF for Sep 01, 2026 downloaded.');">
+                      ⤓ PDF Receipt
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aug 14, 2026</td>
+                  <td><strong>Summer Flower Studio</strong></td>
+                  <td>Visa ending 4821</td>
+                  <td><strong>$110.00</strong></td>
+                  <td><span class="workshop-badge-status">PAID</span></td>
+                  <td>
+                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="showDashToast('Receipt PDF for Aug 14, 2026 downloaded.');">
+                      ⤓ PDF Receipt
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Jun 20, 2026</td>
+                  <td><strong>Intro to Floral Design</strong></td>
+                  <td>Visa ending 4821</td>
+                  <td><strong>$115.00</strong></td>
+                  <td><span class="workshop-badge-status">PAID</span></td>
+                  <td>
+                    <button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.75rem;" onclick="showDashToast('Receipt PDF for Jun 20, 2026 downloaded.');">
+                      ⤓ PDF Receipt
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 07: GUEST PROFILE
+           ========================================== -->
+      <section id="tab-profile" class="tab-view">
+        <div style="margin-bottom: 18px;">
+          <span class="section-tag" style="margin-bottom: 4px;">STUDIO MEMBERSHIP</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 4px;">MY GUEST PROFILE</h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Manage your personal account, workshop preferences, and studio notification alerts.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: start;">
+          <!-- LEFT CARD: PROFILE AVATAR & MEMBERSHIP DETAILS -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; text-align: center;" class="hover-petal-card">
+            <div style="position: relative; width: 100px; height: 100px; margin-inline: auto; margin-bottom: 16px;">
+              <img src="assets/images/15.png" alt="Emma Carter Avatar" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid var(--terracotta-bloom);">
+              <button type="button" style="position: absolute; bottom: 0; inset-inline-end: 0; background: var(--terracotta-bloom); color: #fff; border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-sm);" title="Change Profile Picture" onclick="showToast('Photo update option selected!')">
+                📷
+              </button>
+            </div>
+            <h3 style="margin-bottom: 2px;">Emma Carter</h3>
+            <span style="font-size: 0.78rem; color: var(--terracotta-bloom); font-weight: bold; letter-spacing: 0.05em; display: inline-block; background: var(--terracotta-light); padding: 4px 10px; border-radius: 12px; margin-bottom: 16px;">
+              ✨ FLORAL CONNOISSEUR
+            </span>
+
+            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; text-align: start; border-top: 1px solid var(--border-color); padding-top: 16px;">
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Member ID:</span>
+                <strong style="color: var(--text-main);">BF-2048</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Member Since:</span>
+                <strong style="color: var(--text-main);">September 2025</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Loyalty Points:</span>
+                <strong style="color: var(--terracotta-bloom);">420 Points</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-muted);">Preferred Studio:</span>
+                <strong style="color: var(--text-main);">Creative District</strong>
+              </div>
+            </div>
+
+            <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 0.75rem; color: #24A148; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; justify-content: center;">
+                ✓ Email Address Verified
+              </span>
+              <span style="font-size: 0.75rem; color: #24A148; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; justify-content: center;">
+                ✓ Phone Number Verified
+              </span>
+            </div>
+          </div>
+
+          <!-- RIGHT CARD: PROFILE SETTINGS FORM -->
+          <form id="profile-form" style="background: var(--bg-surface); padding: 24px 28px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+            <h3 style="font-size: 1.15rem; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+              Personal Information
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label for="prof-name">Full Name *</label>
+                <input type="text" id="prof-name" class="form-control" value="Emma Carter">
+              </div>
+              <div class="form-group">
+                <label for="prof-email">Email Address *</label>
+                <input type="email" id="prof-email" class="form-control" value="guest@example.com">
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+              <div class="form-group">
+                <label for="prof-phone">Phone Number</label>
+                <input type="tel" id="prof-phone" class="form-control" value="+1 (555) 019-2834">
+              </div>
+              <div class="form-group">
+                <label for="prof-location">Home City / Neighborhood</label>
+                <input type="text" id="prof-location" class="form-control" value="Botanical District, NY">
+              </div>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+              Workshop & Botanical Preferences
+            </h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+              <div class="form-group">
+                <label for="prof-fav-type">Favorite Workshop Type</label>
+                <select id="prof-fav-type" class="form-control">
+                  <option selected>Seasonal Botanical Bouquets</option>
+                  <option>Zero-Foam Table Centerpieces</option>
+                  <option>Japanese Pin Frog (Ikebana)</option>
+                  <option>Wreath & Dried Harvest</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="prof-style">Preferred Floral Aesthetic</label>
+                <select id="prof-style" class="form-control">
+                  <option selected>Wild Meadow & Organic Foliage</option>
+                  <option>Minimalist & Modern Sculptural</option>
+                  <option>Pastel Garden & Romantic</option>
+                  <option>Moody & Autumn Textural</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+              <label for="prof-beverage">Complimentary Studio Refreshment Preference</label>
+              <select id="prof-beverage" class="form-control">
+                <option selected>Organic Herbal Chamomile & Lavender Tea</option>
+                <option>Iced Botanical Hibiscus Mocktail</option>
+                <option>Sparkling Mineral Water with Citrus</option>
+                <option>Artisan Matcha Latte</option>
+              </select>
+            </div>
+
+            <h3 style="font-size: 1.15rem; margin-bottom: 14px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+              Notification & Reminder Preferences
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--terracotta-bloom); width: 16px; height: 16px;">
+                <span>SMS Workshop Reminders (24 hours prior to session)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--terracotta-bloom); width: 16px; height: 16px;">
+                <span>Email Notifications for Seasonal Theme Drops & Early Access</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer;">
+                <input type="checkbox" checked style="accent-color: var(--terracotta-bloom); width: 16px; height: 16px;">
+                <span>Loyalty Points & Reward Milestone Alerts</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="padding: 12px 28px;">
+              SAVE PROFILE CHANGES →
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TAB 08: HELP & SUPPORT
+           ========================================== -->
+      <section id="tab-support" class="tab-view">
+        <div style="margin-bottom: 18px;">
+          <span class="section-tag" style="margin-bottom: 4px;">GUEST CONCIERGE & HELP CENTER</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 4px;">HELP & STUDIO SUPPORT</h2>
+          <p style="font-size: 0.92rem; color: var(--text-muted);">Find instant answers to common workshop questions or connect directly with our studio host team.</p>
+        </div>
+
+        <!-- QUICK CONTACT CARDS -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">📞</div>
+            <h4 style="margin-bottom: 4px;">Studio Hotline</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">+1 (555) 019-2834<br>Tue–Sat 10:00 AM – 6:00 PM</p>
+            <a href="tel:+15550192834" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem; width: 100%; text-align: center;">CALL STUDIO</a>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">✉️</div>
+            <h4 style="margin-bottom: 4px;">Guest Email Concierge</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">support@bloomandform.com<br>Responds within 4 hours</p>
+            <a href="mailto:support@bloomandform.com" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem; width: 100%; text-align: center;">SEND EMAIL</a>
+          </div>
+
+          <div style="background: var(--bg-surface); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+            <div style="font-size: 1.5rem; margin-bottom: 8px;">📍</div>
+            <h4 style="margin-bottom: 4px;">Studio Location</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">148 Botanical Way, Suite 4<br>Creative District, NY</p>
+            <a href="contact.html" class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem; width: 100%; text-align: center;">STUDIO MAP</a>
+          </div>
+        </div>
+
+        <!-- TWO COLUMN: FAQ ACCORDION & SUPPORT FORM -->
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: start;">
+          <!-- FAQ ACCORDION -->
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 14px;">FREQUENTLY ASKED QUESTIONS</h3>
+            <div class="faq-container" style="margin-top: 0;">
+              <details class="faq-item" open>
+                <summary class="faq-question">How do I reschedule my workshop session?</summary>
+                <div class="faq-answer">
+                  Navigate to the "My Bookings" tab in your Guest Portal. Click "Change Date" next to your confirmed session. Free rescheduling is available up to 48 hours prior to your scheduled class.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">Do I need to bring any tools or aprons?</summary>
+                <div class="faq-answer">
+                  Not at all! We provide organic cotton aprons, Japanese carbon-steel shears, ceramic vessels, and fresh seasonal blooms at your reserved worktable.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">How do my Loyalty Points apply to rewards?</summary>
+                <div class="faq-answer">
+                  Every seat booked earns 100 points. Once you hit 500 points, your perk (such as a complimentary ceramic vase upgrade or free guest ticket pass) will automatically activate at checkout.
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">Can I transfer my booking ticket to a friend?</summary>
+                <div class="faq-answer">
+                  Yes! You can transfer your seat to a friend by sending their name and email to support@bloomandform.com or updating guest details under "My Bookings".
+                </div>
+              </details>
+
+              <details class="faq-item">
+                <summary class="faq-question">What is your studio cancellation policy?</summary>
+                <div class="faq-answer">
+                  Cancellations made 48 hours in advance receive full studio credit valid for 12 months. Inside 48 hours, stems are freshly cut for your arrival, but you may send a friend in your place!
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- QUICK INQUIRY FORM -->
+          <div style="background: var(--bg-surface); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="support-inquiry-card hover-petal-card">
+            <h3 style="font-size: 1.15rem; margin-bottom: 6px;">SEND A NOTE TO OUR HOST</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Have an accessibility request, private group question, or custom inquiry?</p>
+
+            <form onsubmit="event.preventDefault(); showToast('Support note submitted! Host team will reply within 4 hours.');">
+              <div class="form-group" style="margin-bottom: 12px;">
+                <label for="supp-subject">Topic / Category</label>
+                <select id="supp-subject" class="form-control">
+                  <option>Booking & Rescheduling</option>
+                  <option>Private Event Enquiry</option>
+                  <option>Loyalty & Points Question</option>
+                  <option>Accessibility Request</option>
+                  <option>Other Studio Question</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 16px;">
+                <label for="supp-msg">Your Message *</label>
+                <textarea id="supp-msg" class="form-control" rows="4" placeholder="How can our studio team assist you today?" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                SUBMIT SUPPORT INQUIRY →
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

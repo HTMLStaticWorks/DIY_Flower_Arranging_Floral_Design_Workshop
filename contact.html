@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Bloom & Form | Floral Workshops</title>
+  <meta name="description" content="Send us a note for private workshop bookings, corporate floral experiences, or general studio questions.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+          <path d="M16 8V24M10 16H22M12 12C14 14 18 14 20 12M12 20C14 18 18 18 20 20" stroke="currentColor" stroke-width="1.8"/>
+        </svg>
+        <div class="brand-text"><span class="brand-name">BLOOM & FORM</span><span class="brand-descriptor">CONTACT STUDIO</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home 1</a></li>
+          <li><a href="index2.html" class="nav-link">Home 2</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="upcoming-workshops.html" class="nav-link">Workshops</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+          <span>◐</span>
+        </button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction">
+          <span>⇄</span>
+        </button>
+        <a href="dashboard.html" class="ctrl-btn" aria-label="Dashboard" title="Dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+        </a>
+        <a href="login.html" class="nav-primary-cta" title="Login">
+          <span>Login</span>
+        </a>
+      </div>
+
+      <button class="mobile-hamburger" aria-label="Open Mobile Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer">
+    <div class="drawer-header">
+      <div class="brand-text"><span class="brand-name">BLOOM & FORM</span><span class="brand-descriptor">FLORAL WORKSHOPS</span></div>
+      <button class="drawer-close-btn">✕</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="index.html" class="mobile-drawer-link">Home 1</a></li>
+      <li><a href="index2.html" class="mobile-drawer-link">Home 2</a></li>
+      <li><a href="about.html" class="mobile-drawer-link">About</a></li>
+      <li><a href="upcoming-workshops.html" class="mobile-drawer-link">Workshops</a></li>
+      <li><a href="events.html" class="mobile-drawer-link">Events</a></li>
+      <li><a href="pricing.html" class="mobile-drawer-link">Pricing</a></li>
+      <li><a href="contact.html" class="mobile-drawer-link active">Contact</a></li>
+    </ul>
+    <div class="drawer-controls">
+      <a href="login.html" class="nav-primary-cta" style="width: 100%; text-align: center;">
+        <span>Login</span>
+      </a>
+      <div class="ctrl-group">
+        <button class="ctrl-btn js-theme-toggle" aria-label="Toggle Theme" title="Toggle Theme"><span>◐</span></button>
+        <button class="ctrl-btn js-rtl-toggle" aria-label="Toggle Direction" title="Toggle Direction"><span>⇄</span></button>
+        <a href="dashboard.html" class="ctrl-btn" aria-label="Dashboard" title="Dashboard">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- CONTACT SECTION 01 — HERO -->
+    <section class="inner-hero" style="background-image: url('assets/images/3.png');">
+      <div class="container">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h1>LET'S CREATE SOMETHING TOGETHER</h1>
+        <p>
+          For private event enquiries, corporate workshops, accessibility requests, or general studio questions, send us a note.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 02 & 03 — ENQUIRY FORM & STUDIO DETAILS -->
+    <section class="section-padding">
+      <div class="container contact-grid">
+        <!-- FORM -->
+        <form id="contact-form" class="contact-form hover-petal-card">
+          <h3 style="margin-bottom: 8px;">SEND AN ENQUIRY</h3>
+          <p style="font-size: 0.9rem; margin-bottom: var(--space-sm);">Fill out the details below and our studio team will respond within 24 hours.</p>
+
+          <div class="form-group">
+            <label for="contact-name">Full Name *</label>
+            <input type="text" id="contact-name" class="form-control" placeholder="e.g. Clara Bennett">
+            <span id="name-error" class="form-error"></span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+            <div class="form-group">
+              <label for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" class="form-control" placeholder="clara@example.com">
+              <span id="email-error" class="form-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" class="form-control" placeholder="+1 (555) 019-2834">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+            <div class="form-group">
+              <label for="contact-type">Enquiry Type</label>
+              <select id="contact-type" class="form-control">
+                <option>General Question</option>
+                <option>Private Workshop</option>
+                <option>Corporate Event</option>
+                <option>Seasonal Workshop</option>
+                <option>Accessibility Request</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-guests">Estimated Guests</label>
+              <input type="number" id="contact-guests" class="form-control" placeholder="e.g. 8 guests" min="1" max="50">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message">Message or Special Requests *</label>
+            <textarea id="contact-message" class="form-control" rows="4" placeholder="Tell us about your event vision, preferred date or any questions..."></textarea>
+            <span id="message-error" class="form-error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-sm);">
+            SEND ENQUIRY <span class="btn-arrow">→</span>
+          </button>
+        </form>
+
+        <!-- STUDIO DETAILS -->
+        <div class="contact-info-panel">
+          <div style="background: var(--bg-surface); padding: var(--space-xl); border-radius: var(--radius-md); border: 1px solid var(--border-color);" class="hover-petal-card">
+            <span class="section-tag">STUDIO ADDRESS</span>
+            <h3 style="margin-block: 8px;">BLOOM & FORM</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">Floral Design Workshops Studio</p>
+
+            <div style="font-size: 0.8rem; color: var(--terracotta-bloom); background: var(--terracotta-light); padding: 8px 12px; border-radius: 4px; margin-bottom: 20px;">
+              * Fictional placeholder studio information for demonstration.
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.95rem;">
+              <div>
+                <strong>Location:</strong>
+                <p>148 Botanical Studio Way, Creative District</p>
+              </div>
+              <div>
+                <strong>Email:</strong>
+                <p><a href="mailto:hello@example.com" class="hover-stem-link">hello@example.com</a></p>
+              </div>
+              <div>
+                <strong>Phone:</strong>
+                <p><a href="tel:+10000000000" class="hover-stem-link">+1 (000) 000-0000</a></p>
+              </div>
+              <div>
+                <strong>Studio Hours:</strong>
+                <p>Tuesday – Saturday: 10:00 AM – 6:00 PM<br>Sunday & Monday: Studio Closed for Harvesting</p>
+              </div>
+
+              <div style="margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                <strong style="display: block; margin-bottom: 12px;">Connect With Our Studio:</strong>
+                <div class="social-links-grid">
+                  <a href="#" class="social-icon-btn" aria-label="Instagram" title="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  </a>
+                  <a href="#" class="social-icon-btn" aria-label="Pinterest" title="Pinterest">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><path d="M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>
+                  </a>
+                  <a href="#" class="social-icon-btn" aria-label="Facebook" title="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                  <a href="#" class="social-icon-btn" aria-label="YouTube" title="YouTube">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION 04 — GOOGLE MAP LOCATION -->
+    <section class="section-padding" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header center-align">
+          <span class="section-tag" style="color: var(--terracotta-bloom);">STUDIO LOCATION</span>
+          <h2>VISIT OUR FLORAL DESIGN STUDIO</h2>
+          <p>Located in the heart of the botanical district. Drop by during open studio hours or join us for a weekend workshop.</p>
+        </div>
+
+        <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); box-shadow: var(--shadow-md); position: relative; height: 420px; width: 100%;">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.83543450937!2d144.9537363153166!3d-37.81627977975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1614132456789!5m2!1sen!2s" 
+            width="100%" 
+            height="100%" 
+            style="border: 0; filter: contrast(1.02) saturate(1.05);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Bloom & Form Studio Location Google Map">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand-logo" style="margin-bottom: var(--space-md);">
+            <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 8V24M10 16H22M12 12C14 14 18 14 20 12M12 20C14 18 18 18 20 20" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            <div class="brand-text"><span class="brand-name">BLOOM & FORM</span><span class="brand-descriptor">CONTACT STUDIO</span></div>
+          </a>
+          <p style="color: var(--text-inverse-muted); font-size: 0.9rem; margin-bottom: 14px;">Send us an enquiry for private sessions.</p>
+          <div class="social-links-grid">
+            <a href="#" class="social-icon-btn" aria-label="Instagram" title="Instagram" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Pinterest" title="Pinterest" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><path d="M5 12h14"/><circle cx="12" cy="12" r="9"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Facebook" title="Facebook" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="YouTube" title="YouTube" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>EXPLORE</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="index2.html">Home 2</a></li>
+            <li><a href="upcoming-workshops.html">Workshops</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>STUDIO</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Guest Portal</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>SUPPORT</h5>
+          <ul class="footer-links">
+            <li><a href="contact.html">Enquiry Form</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>NEWSLETTER</h5>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Subscribed!');">
+            <input type="email" class="form-control" placeholder="Email Address" required style="background: rgba(247,241,231,0.1); color: var(--petal-cream); border-color: rgba(247,241,231,0.2);">
+            <button type="submit" class="btn btn-primary" style="padding: 8px 16px; margin-top: 8px; font-size: 0.8rem;">SUBSCRIBE</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Bloom & Form. Fictional sample demonstration.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
