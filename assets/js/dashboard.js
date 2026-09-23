@@ -269,7 +269,7 @@ function initLogout() {
       e.preventDefault();
       showDashToast('Signing out...');
       setTimeout(() => {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
       }, 600);
     });
   });
