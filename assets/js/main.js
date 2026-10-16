@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRegisterForm();
   initFAQAccordion();
   initBackToTop();
+  initInteractiveWorkbench();
 });
 
 /* ==========================================================================
@@ -463,3 +464,158 @@ function initBackToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
+
+/* ==========================================================================
+   12. INTERACTIVE ARTISAN WORKBENCH SIMULATOR
+   ========================================================================== */
+const workbenchPhases = {
+  vessel: {
+    index: 0,
+    badge: "Phase 01 • Clean Vessels",
+    title: "Vessel Selection & Hydration Base",
+    desc: "Select your ceramic vessel shape and prepare the water reservoir. You'll master Japanese pin frog positioning for organic weight distribution.",
+    img: "assets/images/2.png",
+    cardTitle: "Technique Highlight: Japanese Kenzan Pin Frog",
+    cardText: "Unlike disposable floral foam which contains microplastics and suffocates stem ends, metal pin frogs allow stems to drink clean water freely for twice the vase life.",
+    hotspots: [
+      { top: "72%", start: "38%", title: "Kenzan Pin Frog", desc: "Heavy Japanese brass pin frog sitting inside the vase. Stems press directly into sharp pins for zero-foam structural integrity." },
+      { top: "35%", start: "65%", title: "Artisan Turned Ceramic", desc: "Hand-glazed pottery with natural earthy texture made exclusively by local potters for our studio sessions." },
+      { top: "60%", start: "22%", title: "Precision Shears", desc: "Japanese carbon-steel floral shears for clean stem hydration cuts without crushing cell walls." }
+    ]
+  },
+  foliage: {
+    index: 1,
+    badge: "Phase 02 • Green Skeleton",
+    title: "Foliage Grading & Structural Framework",
+    desc: "Establish your arrangement's perimeter and height proportions using eucalyptus, olive branches, and textured greenery. This creates the architectural framework.",
+    img: "assets/images/23.png",
+    cardTitle: "Technique Highlight: 3:5 Proportion Rule",
+    cardText: "We teach you the classical proportion rule where tall stems extend 1.5x the height or width of the ceramic vessel to create effortless, natural elegance.",
+    hotspots: [
+      { top: "25%", start: "30%", title: "Perimeter Branch", desc: "First branch sets the overall width and gesture of the organic design." },
+      { top: "50%", start: "55%", title: "Negative Space Gap", desc: "Deliberate pocket left open so focal blooms can breathe without overcrowding." },
+      { top: "75%", start: "45%", title: "Stem Collar Wrap", desc: "Low greenery draping gently over the lip of the pottery to soften hard ceramic edges." }
+    ]
+  },
+  blooms: {
+    index: 2,
+    badge: "Phase 03 • Focal Placement",
+    title: "Focal Blooms & Dynamic Angles",
+    desc: "Introduce primary garden roses, ranunculus, and delicate accent stems. Learn how slight face-angle variations direct the viewer's eye through the arrangement.",
+    img: "assets/images/24.png",
+    cardTitle: "Technique Highlight: Color Blocking & Face Direction",
+    cardText: "Never point all flowers straight up. Tilting focal blooms outward and angling subtle buds upward mimics how flowers naturally grow in wild meadows.",
+    hotspots: [
+      { top: "32%", start: "45%", title: "Primary Focal Rose", desc: "Large open garden rose positioned as the visual anchor of the centerpiece." },
+      { top: "45%", start: "25%", title: "Secondary Accent Bloom", desc: "Complementary pastel ranunculus floating slightly higher to introduce dynamic depth." },
+      { top: "68%", start: "60%", title: "Textural Seed Pod", desc: "Subtle dried poppy pods and textural foliage lending rich tactile personality." }
+    ]
+  },
+  finishing: {
+    index: 3,
+    badge: "Phase 04 • Packaging & Care",
+    title: "Eco Packaging & 14-Day Preservation",
+    desc: "Stage your arrangement for the studio photo, then hand-tie a botanical linen ribbon and safely package your creation in our signature carry box with care guide.",
+    img: "assets/images/32.png",
+    cardTitle: "Technique Highlight: At-Home Floral Longevity",
+    cardText: "Every guest receives our studio preservation card: water temperature tips, daily misting guidelines, and clean stem re-cutting for centerpieces that last up to two weeks.",
+    hotspots: [
+      { top: "40%", start: "50%", title: "Complete Botanical Work", desc: "A museum-worthy centerpiece sculpted entirely by your own hands during the 2-hour session." },
+      { top: "80%", start: "35%", title: "Handmade Linen Ribbon", desc: "Soft-dyed natural linen ribbon tied around your vessel for travel." },
+      { top: "20%", start: "65%", title: "Longevity Care Guide", desc: "Take-home card explaining hydration maintenance and flower stem preservation." }
+    ]
+  }
+};
+
+function initInteractiveWorkbench() {
+  const container = document.querySelector('.workbench-container');
+  if (!container) return;
+
+  const stageImg = document.getElementById('workbench-img');
+  const stageBadge = document.getElementById('workbench-badge');
+  const titleEl = document.getElementById('workbench-title');
+  const descEl = document.getElementById('workbench-desc');
+  const cardTitle = document.getElementById('workbench-card-title');
+  const cardText = document.getElementById('workbench-card-text');
+  const buttons = document.querySelectorAll('.workbench-selector-btn');
+  const dots = document.querySelectorAll('.workbench-dot');
+  const stage = document.querySelector('.workbench-stage');
+
+  function renderHotspots(hotspotList) {
+    // Remove existing hotspots
+    const oldHotspots = stage.querySelectorAll('.stage-hotspot');
+    oldHotspots.forEach(el => el.remove());
+
+    hotspotList.forEach((spot, idx) => {
+      const pin = document.createElement('div');
+      pin.className = 'stage-hotspot js-hotspot';
+      pin.style.top = spot.top;
+      pin.style.insetInlineStart = spot.start;
+      pin.textContent = idx + 1;
+      pin.title = `Click to inspect: ${spot.title}`;
+
+      pin.addEventListener('click', () => {
+        if (cardTitle) cardTitle.textContent = spot.title;
+        if (cardText) cardText.textContent = spot.desc;
+        const liveCard = document.getElementById('workbench-card');
+        if (liveCard) {
+          liveCard.style.borderColor = 'var(--terracotta-bloom)';
+          liveCard.style.boxShadow = '0 6px 20px rgba(201, 111, 85, 0.2)';
+          setTimeout(() => {
+            liveCard.style.borderColor = 'var(--border-color)';
+            liveCard.style.boxShadow = 'none';
+          }, 1200);
+        }
+      });
+
+      stage.appendChild(pin);
+    });
+  }
+
+  function setPhase(key) {
+    const data = workbenchPhases[key];
+    if (!data) return;
+
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.workbench === key));
+    dots.forEach((d, i) => d.classList.toggle('active', i === data.index));
+
+    if (stageBadge) stageBadge.textContent = data.badge;
+    if (titleEl) titleEl.textContent = data.title;
+    if (descEl) descEl.textContent = data.desc;
+    if (cardTitle) cardTitle.textContent = data.cardTitle;
+    if (cardText) cardText.textContent = data.cardText;
+
+    if (stageImg) {
+      stageImg.style.opacity = '0';
+      stageImg.style.transform = 'scale(0.96)';
+      setTimeout(() => {
+        stageImg.src = data.img;
+        stageImg.style.opacity = '1';
+        stageImg.style.transform = 'scale(1)';
+        renderHotspots(data.hotspots);
+      }, 200);
+    }
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setPhase(btn.dataset.workbench);
+    });
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const stepIdx = parseInt(dot.dataset.step, 10);
+      const keys = Object.keys(workbenchPhases);
+      if (keys[stepIdx]) {
+        setPhase(keys[stepIdx]);
+      }
+    });
+  });
+
+  // Initial render of first phase
+  if (workbenchPhases.vessel) {
+    renderHotspots(workbenchPhases.vessel.hotspots);
+  }
+}
+

@@ -208,13 +208,8 @@ img {
   margin-bottom: var(--space-sm);
 }
 
-.section-tag::before {
-  content: "";
-  display: inline-block;
-  width: 18px;
-  height: 2px;
-  background-color: var(--terracotta-bloom);
-}
+/* Section tag indicator removed for cleaner appearance */
+
 
 .section-header p {
   margin-top: var(--space-sm);
@@ -805,13 +800,13 @@ img {
   gap: var(--space-sm);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .nav-links, .nav-actions {
-    display: none;
+    display: none !important;
   }
 
   .mobile-hamburger {
-    display: block;
+    display: block !important;
   }
 }
 
@@ -1711,6 +1706,245 @@ img {
     flex-direction: column;
     gap: var(--space-sm);
   }
+}
+
+/* Workshop Journey Badges & Learning Outcomes */
+.workshop-activities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.workshop-activities-list li {
+  position: relative;
+  padding-inline-start: 14px;
+}
+
+.workshop-activities-list li::before {
+  content: "•";
+  color: var(--terracotta-bloom);
+  position: absolute;
+  inset-inline-start: 0;
+  font-weight: bold;
+}
+
+.workshop-outcomes-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background-color: var(--terracotta-light);
+  color: var(--terracotta-bloom);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+}
+
+.journey-step-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta-bloom);
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   INTERACTIVE WORKSHOP WORKBENCH & STEM BUILDER
+   ========================================================================== */
+
+.workbench-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-xl);
+}
+
+.workbench-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .workbench-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.workbench-stage {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, var(--bg-surface-elevated) 0%, var(--bg-primary) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.workbench-stage img {
+  max-height: 280px;
+  object-fit: contain;
+  transition: transform var(--transition-smooth), opacity var(--transition-fast);
+  filter: drop-shadow(0 14px 24px rgba(36, 53, 42, 0.18));
+}
+
+.workbench-stage-badge {
+  position: absolute;
+  top: 16px;
+  inset-inline-start: 16px;
+  background: var(--botanical-deep);
+  color: var(--petal-cream);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+}
+
+.workbench-step-indicators {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.workbench-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.workbench-dot.active {
+  background: var(--terracotta-bloom);
+  transform: scale(1.3);
+}
+
+/* Hotspots on Stage */
+.stage-hotspot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--terracotta-bloom);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(201, 111, 85, 0.7);
+  animation: pulse-hotspot 2s infinite;
+  transition: transform var(--transition-fast);
+  z-index: 10;
+}
+
+.stage-hotspot:hover {
+  transform: scale(1.15);
+}
+
+@keyframes pulse-hotspot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 111, 85, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(201, 111, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 111, 85, 0);
+  }
+}
+
+.workbench-panel-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.workbench-controls-group {
+  margin-block: var(--space-md);
+}
+
+.workbench-controls-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta-bloom);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.workbench-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.workbench-selector-btn {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.825rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.workbench-selector-btn:hover {
+  border-color: var(--terracotta-bloom);
+  color: var(--terracotta-bloom);
+}
+
+.workbench-selector-btn.active {
+  background: var(--terracotta-bloom);
+  border-color: var(--terracotta-bloom);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(201, 111, 85, 0.25);
+}
+
+.workbench-live-card {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-top: var(--space-md);
+}
+
+.workbench-live-card strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.workbench-live-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ==========================================================================
@@ -2631,3 +2865,380 @@ img {
     word-break: break-word !important;
   }
 }
+
+/* ==========================================================================
+   WORKSHOP 4-STEP ALTERNATING TIMELINE SECTION (CENTER LINE, RIGHT/LEFT, RTL & MOBILE)
+   ========================================================================== */
+
+.steps-timeline-section {
+  position: relative;
+  background-color: var(--bg-surface-elevated);
+  border-block: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.steps-timeline-container {
+  position: relative;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-block: var(--space-xl) var(--space-md);
+}
+
+/* Center vertical line */
+.steps-timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(201, 111, 85, 0.15) 0%,
+    var(--terracotta-bloom) 15%,
+    var(--terracotta-bloom) 85%,
+    rgba(201, 111, 85, 0.15) 100%
+  );
+  transform: translateX(-50%);
+  border-radius: var(--radius-pill);
+  z-index: 1;
+}
+
+/* Timeline Step Row */
+.timeline-step-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.timeline-step-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Half width blocks */
+.timeline-card-col {
+  width: 50%;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.timeline-empty-col {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Left step positioning */
+.timeline-step-left {
+  flex-direction: row;
+}
+
+.timeline-step-left .timeline-card-col {
+  padding-right: clamp(2rem, 4vw, 3.5rem);
+  padding-left: 0;
+  text-align: right;
+}
+
+/* Right step positioning */
+.timeline-step-right {
+  flex-direction: row-reverse;
+}
+
+.timeline-step-right .timeline-card-col {
+  padding-left: clamp(2rem, 4vw, 3.5rem);
+  padding-right: 0;
+  text-align: left;
+}
+
+/* Center Node / Number Badge */
+.timeline-center-node {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 3px solid var(--terracotta-bloom);
+  box-shadow: 0 0 0 6px var(--bg-surface-elevated), 0 8px 24px rgba(201, 111, 85, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: all var(--transition-smooth);
+}
+
+.timeline-step-row:hover .timeline-center-node {
+  background-color: var(--terracotta-bloom);
+  transform: translate(-50%, -50%) scale(1.15);
+  box-shadow: 0 0 0 8px rgba(201, 111, 85, 0.25), 0 12px 30px rgba(201, 111, 85, 0.4);
+}
+
+.timeline-node-num {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--terracotta-bloom);
+  transition: color var(--transition-smooth);
+}
+
+.timeline-step-row:hover .timeline-node-num {
+  color: #ffffff;
+}
+
+/* Timeline Card Design */
+.timeline-step-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.timeline-step-card:hover {
+  border-color: var(--terracotta-bloom);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 16px 36px rgba(201, 111, 85, 0.12);
+}
+
+/* Connector Pointer Arrow */
+.timeline-step-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  transform: translateY(-50%) rotate(45deg);
+  transition: border-color var(--transition-smooth);
+  z-index: 1;
+}
+
+.timeline-step-left .timeline-step-card::after {
+  right: -9px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.timeline-step-right .timeline-step-card::after {
+  left: -9px;
+  border-right: none;
+  border-top: none;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.timeline-step-card:hover::after {
+  border-color: var(--terracotta-bloom);
+}
+
+/* Text alignments inside cards */
+.timeline-step-left .timeline-step-card {
+  text-align: right;
+}
+
+.timeline-step-right .timeline-step-card {
+  text-align: left;
+}
+
+/* Inner badges and pill alignment */
+.timeline-step-left .timeline-step-badges {
+  justify-content: flex-end;
+}
+
+.timeline-step-right .timeline-step-badges {
+  justify-content: flex-start;
+}
+
+.timeline-step-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   RTL Desktop Timeline Support
+   In RTL mode:
+   - flex container reverses direction naturally unless controlled.
+   - We enforce strict physical column positioning so cards sit comfortably on either side of the center line.
+   - Step 1 & 3: sits on the right of the center line, pointing inward (to the left towards the center node). Text aligned to right.
+   - Step 2 & 4: sits on the left of the center line, pointing inward (to the right towards the center node). Text aligned to right.
+   ========================================================================== */
+
+[dir="rtl"] .steps-timeline-container::before {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* In RTL:
+   timeline-step-left: we want it placed on the RIGHT side of the center line.
+   In RTL flex, default row starts from the right edge!
+   So flex-direction: row puts .timeline-card-col on the RIGHT, and .timeline-empty-col on the LEFT!
+*/
+[dir="rtl"] .timeline-step-left {
+  flex-direction: row !important;
+}
+
+[dir="rtl"] .timeline-step-left .timeline-card-col {
+  padding-left: clamp(2rem, 4vw, 3.5rem) !important;
+  padding-right: 0 !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .timeline-step-left .timeline-step-card {
+  text-align: right !important;
+}
+
+/* For step-left on the right side of the vertical line, the pointer arrow must point LEFT toward the center */
+[dir="rtl"] .timeline-step-left .timeline-step-card::after {
+  left: -9px !important;
+  right: auto !important;
+  border-left: 1px solid var(--border-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  border-right: none !important;
+  border-top: none !important;
+}
+
+/* In RTL:
+   timeline-step-right: we want it placed on the LEFT side of the center line.
+   flex-direction: row-reverse in RTL starts from the left edge!
+   So .timeline-card-col sits on the LEFT, and .timeline-empty-col sits on the RIGHT!
+*/
+[dir="rtl"] .timeline-step-right {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .timeline-step-right .timeline-card-col {
+  padding-right: clamp(2rem, 4vw, 3.5rem) !important;
+  padding-left: 0 !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .timeline-step-right .timeline-step-card {
+  text-align: right !important;
+}
+
+/* For step-right on the left side of the vertical line, the pointer arrow must point RIGHT toward the center */
+[dir="rtl"] .timeline-step-right .timeline-step-card::after {
+  right: -9px !important;
+  left: auto !important;
+  border-right: 1px solid var(--border-color) !important;
+  border-top: 1px solid var(--border-color) !important;
+  border-left: none !important;
+  border-bottom: none !important;
+}
+
+[dir="rtl"] .timeline-step-left .timeline-step-badges,
+[dir="rtl"] .timeline-step-right .timeline-step-badges {
+  justify-content: flex-start !important;
+}
+
+/* Tablet & Mobile Responsiveness (< 900px) */
+@media (max-width: 899px) {
+  .steps-timeline-container::before {
+    left: 28px !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  [dir="rtl"] .steps-timeline-container::before {
+    right: 28px !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .timeline-step-row {
+    flex-direction: column !important;
+    align-items: flex-start;
+    padding-left: 68px;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  [dir="rtl"] .timeline-step-row {
+    padding-right: 68px !important;
+    padding-left: 0 !important;
+  }
+
+  .timeline-card-col {
+    width: 100% !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+
+  [dir="rtl"] .timeline-card-col {
+    text-align: right !important;
+  }
+
+  .timeline-empty-col {
+    display: none !important;
+  }
+
+  .timeline-center-node {
+    top: 24px !important;
+    left: 28px !important;
+    right: auto !important;
+    transform: translate(-50%, 0) !important;
+    width: 44px;
+    height: 44px;
+  }
+
+  [dir="rtl"] .timeline-center-node {
+    right: 28px !important;
+    left: auto !important;
+    transform: translate(50%, 0) !important;
+  }
+
+  .timeline-step-card {
+    text-align: left !important;
+    padding: 1.25rem !important;
+  }
+
+  [dir="rtl"] .timeline-step-card {
+    text-align: right !important;
+  }
+
+  /* Triangle points toward the left line in LTR */
+  .timeline-step-card::after {
+    left: -8px !important;
+    right: auto !important;
+    top: 24px !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-left: 1px solid var(--border-color) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    transform: rotate(45deg) !important;
+  }
+
+  /* Triangle points toward the right line in RTL */
+  [dir="rtl"] .timeline-step-card::after {
+    right: -8px !important;
+    left: auto !important;
+    top: 24px !important;
+    border-left: none !important;
+    border-bottom: none !important;
+    border-right: 1px solid var(--border-color) !important;
+    border-top: 1px solid var(--border-color) !important;
+    transform: rotate(45deg) !important;
+  }
+
+  .timeline-step-badges {
+    justify-content: flex-start !important;
+  }
+
+  [dir="rtl"] .timeline-step-badges {
+    justify-content: flex-start !important;
+  }
+}
+
